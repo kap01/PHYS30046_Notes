@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_06" class="java.beans.XMLDecoder"> 
+ <object class="JaxoDraw.JaxoSaveGraph"> 
+  <void property="objectList"> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object id="Color0" class="java.awt.Color"> 
+       <int>0</int> 
+       <int>0</int> 
+       <int>0</int> 
+       <int>255</int> 
+      </object> 
+     </void> 
+     <void property="relh"> 
+      <int>1</int> 
+     </void> 
+     <void property="relw"> 
+      <int>286</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>149</int> 
+     </void> 
+     <void property="y"> 
+      <int>165</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoPLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="amp"> 
+      <int>15</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="freq"> 
+      <float>20.0</float> 
+     </void> 
+     <void property="relh"> 
+      <int>115</int> 
+     </void> 
+     <void property="relw"> 
+      <int>150</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>436</int> 
+     </void> 
+     <void property="y"> 
+      <int>170</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="relh"> 
+      <int>-144</int> 
+     </void> 
+     <void property="relw"> 
+      <int>168</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>435</int> 
+     </void> 
+     <void property="y"> 
+      <int>22</int> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

@@ -1,0 +1,35 @@
+\setlength{\unitlength}{3947sp}%
+%
+\begingroup\makeatletter\ifx\SetFigFont\undefined%
+\gdef\SetFigFont#1#2#3#4#5{%
+  \reset@font\fontsize{#1}{#2pt}%
+  \fontfamily{#3}\fontseries{#4}\fontshape{#5}%
+  \selectfont}%
+\fi\endgroup%
+\begin{picture}(5538,4606)(2243,-5687)
+\put(7426,-5311){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{1,0,0}d}%
+}}}}
+\thicklines
+{\color[rgb]{0.359,0.000,0.875}\put(3621,-5164){\vector(-1, 4){872.941}}
+}%
+{\color[rgb]{1,0,0}\put(3601,-5161){\vector( 1, 0){3600}}
+}%
+{\color[rgb]{0.902,0.000,0.633}\put(3607,-5162){\vector( 4, 1){3491.765}}
+}%
+\put(2926,-4036){\rotatebox{102.7}{\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{0.359,0.000,0.875}(interacts with c)}%
+}}}}}
+\put(4876,-4636){\rotatebox{12.7}{\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{0.902,0.000,0.633}(interacts with u)}%
+}}}}}
+\put(4126,-4036){\rotatebox{90.0}{\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{0,0,1}(physical s quark)}%
+}}}}}
+\put(4876,-5611){\makebox(0,0)[lb]{\smash{{\SetFigFont{17}{20.4}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{1,0,0}(physical d quark)}%
+}}}}
+\put(2476,-1486){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{0.359,0.000,0.875}s'}%
+}}}}
+\put(3451,-1336){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{0,0,1}s}%
+}}}}
+\put(7351,-4411){\makebox(0,0)[lb]{\smash{{\SetFigFont{29}{34.8}{\rmdefault}{\bfdefault}{\updefault}{\color[rgb]{0.902,0.000,0.633}d'}%
+}}}}
+{\color[rgb]{0,0,1}\put(3601,-5161){\vector( 0, 1){3600}}
+}%
+\end{picture}%

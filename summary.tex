@@ -1,0 +1,105 @@
+\section{Summary of forces, conservation laws, symmetries and Feynman rules in the Standard Model}
+\subsection{Forces}
+We dealt with three forces:
+\begin{itemize}
+\item strong force
+\item electromagnetic force
+\item weak force
+\end{itemize}
+
+\subsubsection{Strong force}
+The strong force acts between colour-charged objects and is mediated by gluon exchange. Fundamental particles with colour charge are quarks and gluons themselves. Quarks have colour charge $r, g, b$, antiquarks $\overline{r}, \overline{g}, \overline{b}$, while gluons have mixed colour-anticolour such as $g\overline{b}$.
+
+No particle with colour charge ever exists by itself, they all form eventually colour neutral objects. This is because at large-ish distances, the potential energy between two colour-charged objects keeps increasing as one separates colour-charged objects until enough energy is available to produce a quark-antiquark pair. This is called "confinement". The strong interaction is so strong, that usually perturbation theory (Feynman diagrams) do not work, because the coupling constant is $\alpha_S \sim 1$. However, at very high energies (short distances), the strong coupling constant becomes small, allowing perturbative calculations. This is called "asymptotic freedom".
+
+The strong force also acts between the protons and neutrons that make up the nucleus (and between other hadrons). Protons and neutrons are colour-neutral objects. However, because they are composite particles made of colour-charged fundamental particles, a residual, short-range force acts between the (this is similar to the Van de Vaals force that acts between electrically neutral atoms). This strong nuclear force can be modelled with pion exchange.
+
+The strong force conserves separately \cs, \ps, \cp, and flavour. To a very good approximation, it conserves isospin.
+
+\subsubsection{Electromagnetic force}
+Is much weaker than the strong force, with $\alpha_{em} = 1/137$. It acts on all charged particles and is modelled with photon exchange. It conserves separately \cs, \ps, \cp, and flavour.
+
+\subsubsection{Weak force}
+Is even weaker in its effect, although the weak coupling constant $\alpha_W$ is in fact slightly larger than $\alpha_{em}$. The reason for the weak force's weakness is the fact that it is mediated by massive vector bosons, $W^{\pm}$ and $Z^0$.
+
+The weak force violates \cs, \ps, \cp, and flavour.
+
+Violating flavour means that it can change the flavour of a particle, e.g. turn an up quark to a down quark or a $e^-$ to a $\nu_{e}$ etc.
+Only vertices with $W^{\pm}$ can change flavour, the $Z$ cannot. Flavour changing neutral currents are quark lines in your diagrams that connect two different up-type quarks (like $u, c$ or two different down-type quarks (e.g. $d, b$) or two different same-charged lepton like $\mu^-, e^-$. There is no single vertex that does such a flavour change (i.e. the $Z$ does not change flavour). They can proceed at loop-level (where the flavour change happens in two steps: $d \to t \to b$ with $W$s emitted/absorbed at each step). These FCNC are highly suppressed even loop level. This is through the GIM mechanism in 2 generations and its generalisation to three generations.
+
+In the Standard model without neutrino oscillations, lepton family number is conserved: $e^-, \nu_e$ have $L_e=1$ and $e^+, \overline{\nu}_e$ have $L_e = -1$, similarly $\mu^-, \nu_{\mu}$ have $L_{\mu}=1$ while $\mu^+, \overline{\nu}_{\mu}$ have $L_{\mu} = -1$, and $\tau^-, \nu_{\tau}$ have $L_{\tau}=1$, $\tau^+, \overline{\nu}_{\tau}$ have $L_{\tau} = -1$. Lepton family number conservation means that $L_e$, $L_{\mu}$ and $L_{\tau}$ are conserved separately. 
+
+With neutrino oscillations, $L_f$ (where $f=e, \mu, \tau$) can clearly be violated, for example through $\nu_e \to \nu_{\mu}$. However, \emph{charged} leptons can still not change flavour w/o the creation of a corresponding neutrino to cancel that flavour change. This means reactions like this, which we call Charged Lepton Flavour (CLF) violating:
+\begin{itemize}
+\item $\mu^- \to e^- \gamma$
+\item $\tau^- \to \mu^+ \mu^- \mu^-$
+\end{itemize}
+are forbidden. (Note that there are Feynman diagrams that allow them, but they evaluate to such small probabilities that effectively, these decays are forbidden).
+
+\subsubsection{Electroweak Unification}
+The electromagnetic and the weak force are related through the electro-weak theory, which includes in particular electroweak symmetry breaking and the Higgs mechanism, which gives the weak vector bosons its mass. While we did do the Higgs mechanism, we did not go through the details of the electroweak unification. But it's worth knowing that the electromagnetic and the weak force are closely related (which is also why their coupling constants are so similar).
+
+\subsection{Conservation laws}
+\subsection{The discrete symmetries of the interactions in the Standard Model}
+\begin{table}
+\centering
+\begin{tabular}{p{2.75cm}| *{9}{c|}}
+       & \cs    & \ps    & \cp    &flavour & Isospin& CLF    & L      & B      & Q 
+\\\hline
+strong & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark \\
+e/m    & \cmark & \cmark & \cmark & \cmark & \xmark & \cmark & \cmark & \cmark & \cmark \\
+weak   & \xmark & \xmark & \xmark & \xmark & \xmark & \cmark & \cmark & \cmark & \cmark \\
+\end{tabular}
+\caption{The table above summarises for each interaction, which symmetries are conserved (\cmark) and which are violated (\xmark).\label{tab:symmetries}}
+\end{table}
+
+All SM interactions respect:
+\begin{itemize}
+\item Lepton number conservation ($e^-, \nu_e, \mu^-, ...)$ all have $L=+1$, while their antiparticles have {\color{red}$L=-1$}.
+\item Baryon number conservation. On the quark level, all quarks have $B=+1/3$ and all anti-quarks have $B=-1/3$, all other fundamental particles have $B=0$. This means that $p, n, \Lambda_b$ have $B=+1$, while their antiparticles have $B=-1$. Mesons have $B=0$, as do leptons.
+\item Electric charge Q, colour charge (r, g, b) and weak hypercharge conservation (the latter is in practice [i.e. for exam purposes] something you do not need to worry about).
+\item And of course energy and momentum conservation.
+\end{itemize}
+
+How the different forces respect (or otherwise) \cs, \ps, \cp, flavour, CLF, isospin, baryon and lepton number (and charge) is summarised in \tabref{tab:symmetries}.
+
+When you consider which interaction could have been responsible for a given decay, the symmetries above are important, but of course the particles involved also need to have the right charge (i.e. electric charge for e/m, colour charge for strong interactions). For example $\phi \to \mu^+ \mu^-$ does not violate any symmetry, but it cannot be due to the strong interaction, because muons do not have colour charge. And if a neutrino is involved, it must always be the weak interaction (neutrinos only interact weakly). $\phi \to \mu^+ \mu^-$ can proceed via $e/m$, though (in principle a weak decay via a virtual $Z$ is also possible, but that process is negligible by comparison). On the other hand, $\phi \to K^+ K^-$ can proceed via the strong interaction. The $K^+$ and the $K^-$ are colour-neutral (like all directly observable particles), but they are made of colour-charged quarks, and they do interact strongly. In fact $\phi \to K^+ K^-$ is the dominant decay mode of the $\phi$, while $\phi \to \mu^+ \mu^-$ happens, but only very rarely. In general, if more than one interaction could be responsible for a reaction, it's always the strongest one that dominates (i.e. strong wins over e/m, which in turn wins over weak).
+
+\subsection{Feynman rules summary}
+\subsubsection{Feynman rules and approximations}
+Feynman diagrams are a graphical representation of what is in effect a "Taylor expansion" of the full theory. The number of vertices in the diagram represents the order of the term in that expansion that the Feynman diagram represents. Most of the time we'll only deal with the lowest order term.
+
+Evaluating Feynman diagrams fully can be quite a messy operation. We will here adopt the following \textbf{approximation: we will estimate Feynman diagrams \emph{ignoring spin}.} This simplifies things immensely (no gamma matrices). Our results will be reasonable approximations as long as spin does not matter. We won't be very good at getting angular distributions right with this, but for total rates we will be OK, with the exception of helicity suppression, but we know how to deal with that separately. Weak-interaction phases (from the CKM matrix) will even be correct.
+
+\subsubsection{QED vertices}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_QED}
+
+\subsubsection{W and Z vertices}
+\paragraph{leptons and W:\\}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_lW}
+\paragraph{quarks and W:\\}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_qW}
+\paragraph{Z and quarks or leptons\\}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_fZ}\\
+($Z$ couplings are complicated and depend on the charge as well as hypercharge - in the $Z$, electroweak unification is represented in one single particle - but approximately these couplings are $~g_W$.)
+\paragraph{Z and W\\}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_trilinearGauge}
+This vertices are called "trilinear gauge couplings".
+
+\subsubsection{Higgs}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_H}\\
+(all you need to remember is that this coupling is proportional to mass)
+
+\subsubsection{QCD vertices}
+\paragraph{quarks and gluons\\}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_qg}
+
+\paragraph{gluon self couplings\\}
+\includegraphics[width=0.9\textwidth]{fig/summary/F_gg}\\
+(you only need to remember they exist; self couplings between the force-carriers are characteristic the weak and strong interaction, while in QED, the photon does not couple to itself)
+
+\subsubsection{Propagators}
+In our approximation, all propagators are simply $1/(q^2 - m^2)$, where $q$ is the the 4-momentum of the internal particle line, and $q^2 = E_q^2 - |\vec{q}|^2$. $m$ is the particle's mass, which is zero for photons and gluons, and non-zero otherwise.\\
+\includegraphics[width=0.9\textwidth]{fig/summary/F_prop}
+
+

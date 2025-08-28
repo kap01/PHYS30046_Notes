@@ -1,0 +1,85 @@
+\section{Natural units*}
+\label{sec:naturalUnits}
+We will usually use ``natural'' units with 
+\[
+c=\hbar=1.
+\]
+ Disclaimer: If inconsistencies are found in the notes in terms of missing/additional
+ factors of $\hbar$ or $c$ please let me know. The person that spots the most errors
+ will be in for a prize (nothing too special, more about the 
+ feeling of satisfaction and pride...) 
+ 
+ Amongst other things, this implies that time and length have the same
+ units. From
+\[
+  E^2 = (cp)^2 + (mc^2)^2,
+\]
+ which simplifies to
+\[
+  E^2 = p^2 + m^2
+\]
+ in our system of units, we see that energy, momentum and mass
+ have the same units. The relationship between wavelength and
+ momentum of the photon:
+\[
+   p = \hbar \frac{2\pi}{\lambda}
+\]
+ implies that the units for momentum are inverse to those for
+ distance. If we choose \units{GeV} as our energy unit, we get:
+\begin{itemize}
+  \item \units{GeV} as unit for mass, energy, momentum
+  \item \units{GeV^{-1}} as unit for time and distance
+\end{itemize}
+
+The trick for translating from natural units, where $\hbar=c=1$, to
+other systems, is to multiply any part of the expression/formula in
+natural units with factors of $1$ expressed in terms of $\hbar$, $c$,
+$c^2$, $\hbar c$, etc, until the expression has the correct units in
+both systems. Remember that the units of $\hbar$ are [Energy]$\times$[Time] (e.g. \units{J\, s} or \units{MeV \, s} in SI units) while the units of $c$ are [Distance]/[Time]. Their product has units of [Energy]$\times$[Distance]. A relationship that is particularly useful for translating those units back to SI
+ units is
+\[
+  \hbar c = \un{196}{MeV\,fm}.
+\]
+It's worth remembering this, or at least
+\[
+  \hbar c \approx \un{200}{MeV\,fm}.
+\]
+
+Let's for example translate the lifetime of a particle
+from \units{MeV^{-1}} into seconds. The width of the \prt{\phi} particle is
+$\Gamma = \un{4.458}{MeV}$, so, in our system of units, its lifetime
+is $\tau = 1/\Gamma=\un{0.2243}{MeV^{-1}} =\un{0.2243}{MeV^{-1}} \hbar
+= \un{0.2243}{MeV^{-1}} \hbar c/c$. The expression on the right is
+exactly the same as the one on the left in our system of units, but it
+also has the correct units in the SI system (time). Hence
+ \begin{eqnarray*}
+\tau &=&       \un{0.22}{MeV^{-1}} \hbar c/c                 \\
+     &\approx& \un{0.22}{MeV^{-1}} \cdot \un{200}{MeV\,fm} /c      \\
+     &\approx&       \un{44}{fm} /c                                \\
+     &\approx& \un{44/3 \cdot 10^{-15}\cdot 10^{-8}}{s}  \\
+     &\approx&        1.5 \cdot 10^{-22} \units{s}
+\end{eqnarray*}
+
+\exercise{
+Translate the following recipe into natural units:
+"Take 2 eggs, 500g of flour and a pint of milk. Mix for 10 min."
+\vspace{1ex}\\
+\rotatebox{180}{\parbox{0.9\textwidth}{
+\begin{itemize}
+\item 2 is just a number and remains invariant under the unit change.
+\item 500$g$ is a mass, we want to know what that is in energy units, so we need to calculate: $mc^2 = \un{0.5}{kg}\cdot \un{9\cdot 10^{16}}{m^2/s^2} = \un{4.5\cdot 10^{16}}{J}$. Now multiply by $e/e$: $\un{4.5\cdot 10^{16}}{e J/e}$. Use $J/C = V$ and $e=\un{1.6 \cdot 10^{-19}}{C}$ to get
+\un{2.8\cdot 10^{35}}{eV} of flour.
+\item 1pint refers to a volume of \un{568}{cm^3}. We will measure volume in terms of $(eV)^-3$. We'll use that $\hbar c$ has units of [energy]$\times$[length]. So...
+$\un{568\cdot 10^{-6}}{m^3} / (\hbar c)^3 = 
+\un{5.68\cdot 10^{-4}}{m^3} / (\un{8\cdot 10^6}{MeV^3 fm^3})
+=\un{0.71\cdot 10^{-4-6+45}}{MeV^{-3}} = \un{0.71\cdot 10^{35}}{MeV^{-3}}$
+\item We want to multiply \un{600}{s} with factors of $\hbar$ and $c$ until we get inverse energy units. This is achieved by dividing by $\hbar$, which has units [energy]$\times$[time]. So we get $\un{600}{s} / \hbar$, which we calculate again with the $\hbar c$ trick, $\un{600}{s} /\hbar c/c = 600s /(\un{200}{MeV\,fm}) \cdot (3\cdot 10^8 m/s) = \un{9\cdot 10^{22}}{MeV^{-1}}$. 
+\end{itemize}
+So the solutions is:
+"Take 2 eggs, a mass of \un{2.8\cdot{10^{35}}}{MeV} of flour and a volume of \un{0.71\cdot 10^{35}}{MeV^{-3}} of milk. Mix for \un{9\cdot 10^{22}}{MeV^{-1}}"
+}}
+}
+
+Further discussion on natural units that goes beyond what is examinable
+can be found in the Appendix.
+

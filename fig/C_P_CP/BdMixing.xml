@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<java version="1.5.0_07" class="java.beans.XMLDecoder"> 
+ <object class="JaxoDraw.JaxoSaveGraph"> 
+  <void property="objectList"> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object id="Color0" class="java.awt.Color"> 
+       <int>0</int> 
+       <int>0</int> 
+       <int>0</int> 
+       <int>255</int> 
+      </object> 
+     </void> 
+     <void property="relh"> 
+      <int>0</int> 
+     </void> 
+     <void property="relw"> 
+      <int>150</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>105</int> 
+     </void> 
+     <void property="y"> 
+      <int>90</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="relh"> 
+      <int>0</int> 
+     </void> 
+     <void property="relw"> 
+      <int>150</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>105</int> 
+     </void> 
+     <void property="y"> 
+      <int>225</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="relh"> 
+      <int>0</int> 
+     </void> 
+     <void property="relw"> 
+      <int>135</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>255</int> 
+     </void> 
+     <void property="y"> 
+      <int>90</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="relh"> 
+      <int>0</int> 
+     </void> 
+     <void property="relw"> 
+      <int>135</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>255</int> 
+     </void> 
+     <void property="y"> 
+      <int>225</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="relh"> 
+      <int>0</int> 
+     </void> 
+     <void property="relw"> 
+      <int>135</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>390</int> 
+     </void> 
+     <void property="y"> 
+      <int>90</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoFLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="relh"> 
+      <int>0</int> 
+     </void> 
+     <void property="relw"> 
+      <int>135</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>390</int> 
+     </void> 
+     <void property="y"> 
+      <int>225</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoSLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="dash"> 
+      <float>10.0</float> 
+     </void> 
+     <void property="relh"> 
+      <int>135</int> 
+     </void> 
+     <void property="relw"> 
+      <int>0</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>255</int> 
+     </void> 
+     <void property="y"> 
+      <int>90</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoSLine"> 
+     <void property="DLSeparation"> 
+      <float>2.0</float> 
+     </void> 
+     <void property="arrow"> 
+      <boolean>true</boolean> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="dash"> 
+      <float>10.0</float> 
+     </void> 
+     <void property="relh"> 
+      <int>135</int> 
+     </void> 
+     <void property="relw"> 
+      <int>0</int> 
+     </void> 
+     <void property="stroke"> 
+      <float>6.0</float> 
+     </void> 
+     <void property="x"> 
+      <int>390</int> 
+     </void> 
+     <void property="y"> 
+      <int>90</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoLatexText"> 
+     <void property="allign"> 
+      <int>2</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="latexFS"> 
+      <int>7</int> 
+     </void> 
+     <void property="textString"> 
+      <string>\bar{b}</string> 
+     </void> 
+     <void property="x"> 
+      <int>60</int> 
+     </void> 
+     <void property="y"> 
+      <int>90</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoLatexText"> 
+     <void property="allign"> 
+      <int>2</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="latexFS"> 
+      <int>7</int> 
+     </void> 
+     <void property="textString"> 
+      <string>d</string> 
+     </void> 
+     <void property="x"> 
+      <int>60</int> 
+     </void> 
+     <void property="y"> 
+      <int>225</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoLatexText"> 
+     <void property="allign"> 
+      <int>2</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="latexFS"> 
+      <int>7</int> 
+     </void> 
+     <void property="textString"> 
+      <string>\bar{t}</string> 
+     </void> 
+     <void property="x"> 
+      <int>315</int> 
+     </void> 
+     <void property="y"> 
+      <int>60</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoLatexText"> 
+     <void property="allign"> 
+      <int>2</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="latexFS"> 
+      <int>7</int> 
+     </void> 
+     <void property="textString"> 
+      <string>\bar{d}</string> 
+     </void> 
+     <void property="x"> 
+      <int>570</int> 
+     </void> 
+     <void property="y"> 
+      <int>90</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoLatexText"> 
+     <void property="allign"> 
+      <int>2</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="latexFS"> 
+      <int>7</int> 
+     </void> 
+     <void property="textString"> 
+      <string>t</string> 
+     </void> 
+     <void property="x"> 
+      <int>300</int> 
+     </void> 
+     <void property="y"> 
+      <int>255</int> 
+     </void> 
+    </object> 
+   </void> 
+   <void method="add"> 
+    <object class="JaxoDraw.JaxoLatexText"> 
+     <void property="allign"> 
+      <int>2</int> 
+     </void> 
+     <void property="color"> 
+      <object idref="Color0"/> 
+     </void> 
+     <void property="latexFS"> 
+      <int>7</int> 
+     </void> 
+     <void property="textString"> 
+      <string>b</string> 
+     </void> 
+     <void property="x"> 
+      <int>570</int> 
+     </void> 
+     <void property="y"> 
+      <int>225</int> 
+     </void> 
+    </object> 
+   </void> 
+  </void> 
+ </object> 
+</java> 

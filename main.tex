@@ -1,0 +1,146 @@
+\documentclass[a4paper,11pt]{article}
+\pdfoutput=1 % if your are submitting a pdflatex (i.e. if you have
+             % images in pdf, png or jpg format)
+
+\usepackage{jheppub} % for details on the use of the package, please
+                     % see the JHEP-author-manual
+\usepackage{enumerate}
+\usepackage{feynmp}
+\usepackage[T1]{fontenc} % if needed
+\usepackage{lineno}
+\usepackage{amsmath}
+\usepackage{pdfpages}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\Lecture}[1]
+           {
+             {\Huge\bf\underline{Week #1}}
+           }
+\usepackage{mathtools}
+\usepackage{arev}
+\usepackage{cancel}
+%%% fixes the line numbering near \begin{align}
+\newcommand*\patchAmsMathEnvironmentForLineno[1]{%
+  \expandafter\let\csname old#1\expandafter\endcsname\csname #1\endcsname
+  \expandafter\let\csname oldend#1\expandafter\endcsname\csname end#1\endcsname
+  \renewenvironment{#1}%
+     {\linenomath\csname old#1\endcsname}%
+     {\csname oldend#1\endcsname\endlinenomath}}% 
+\newcommand*\patchBothAmsMathEnvironmentsForLineno[1]{%
+  \patchAmsMathEnvironmentForLineno{#1}%
+  \patchAmsMathEnvironmentForLineno{#1*}}%
+\AtBeginDocument{%
+\patchBothAmsMathEnvironmentsForLineno{equation}%
+\patchBothAmsMathEnvironmentsForLineno{align}%
+\patchBothAmsMathEnvironmentsForLineno{flalign}%
+\patchBothAmsMathEnvironmentsForLineno{alignat}%
+\patchBothAmsMathEnvironmentsForLineno{gather}%
+\patchBothAmsMathEnvironmentsForLineno{multline}%
+}
+%%
+%% paragraphs with vertical space, no indent:
+\parindent=0em \addtolength{\parskip}{2ex}
+%%
+
+\newcommand{\hideAnswers}{0}
+
+
+\include{maths}
+\include{particleNames}
+
+\title{\boldmath Particle Physics \texttt{{\bf PHYS32012}} (Third Year Course) Notes}
+
+
+%% %simple case: 2 authors, same institution
+%% \author{A. Uthor}
+%% \author{and A. Nother Author}
+%% \affiliation{Institution,\\Address, Country}
+
+% more complex case: 4 authors, 3 institutions, 2 footnotes
+\author[a]{K.A. Petridis,}
+\author[a]{J. Rademacker}
+% The "\note" macro will give a warning: "Ignoring empty anchor..."
+% you can safely ignore it.
+
+\affiliation[a]{University of Bristol,Bristol, UK}
+
+% e-mail addresses: one for each author, in the same order as the authors
+\emailAdd{konstantinos.petridis@bristol.ac.uk}
+
+
+
+
+\abstract{Notes for a Particle Physics course for third year undergraduate physics
+  students of the University of Bristol. Please report any errors to the emails listed above. }
+
+
+
+\begin{document} 
+\linenumbers
+
+\maketitle
+\flushbottom
+\acknowledgments
+Many thanks to Joel Goldstein, Helen Heath and Jaap Velthuis
+for their notes and guidance.
+%% Week 7
+\newpage
+\include{introduction}
+\include{ParticlesAndDiagrams}
+\include{fourvectors}
+\include{natural}
+\newpage
+%% Week 8
+\include{diracequation}
+\newpage
+\include{strongforce}
+\newpage
+%% Week 9
+\include{weakSummary}
+\include{StrangnessMixingAndCharm}
+\include{C_P_CP_1}
+\include{C_P_CP_2}
+
+%% Week 6,7
+\include{C_P_CP_3}
+%% Week 8
+\include{C_P_CP_4}
+\include{RareDecays}
+%% Week 9
+\include{accelerators} 
+\include{detectors}
+%% Week 10
+\include{higgs}
+\include{bsm}
+
+\include{summary}
+\appendix
+\section*{Appendix}
+\input{natural_further}
+\input{forcerange}
+\input{asymptotic_freedom}
+\input{treeFCNC}
+\input{goldenRules}
+\input{kaon_cpv}
+\input{matter}
+\input{higgs_proof}
+\input{HiggsWithLagrangians}
+%
+\section{Problem Sheets}
+\include{problemsheets/problemsheet1}
+\include{problemsheets/problemsheet2}
+\include{problemsheets/problemsheet3}
+\include{problemsheets/problemsheet4}
+\cleardoublepage
+
+\section{Formula Sheet}
+\label{sec:formulaSheet}
+\input{formulaSheet}
+
+
+\cleardoublepage
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
+\end{document}
