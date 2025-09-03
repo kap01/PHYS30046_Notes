@@ -1,12 +1,12 @@
 \section{Particle Physics detectors}
 
-In order to detect a particle it must interact with the material of the detector and transfer energy in some recognisable fashion.
+To detect a particle, it must interact with the material of the detector and transfer energy in some recognisable fashion.
 \paragraph{Particle detection occurs via the energy loss of particles through the material they traverse.} In the end, all signals we record are electromagnetic signals. So we can discover charged particles. Neutral particles need to be converted to charged particles to be seen. This happens in an electromagnetic calorimeter with photons $\gamma \to e^+ e^-$, and in hadronic calorimeters via nuclear interactions that create charged pions and protons.
 
 \paragraph{Possibilities}
 \begin{itemize}
-\item[(i)] EM charged particles $\rightarrow$ Ionisation, Bremsstrahlung$^*$, Cherenkov
-\item[(ii)] Hadrons $\rightarrow$ Nuclear interactions$^*$ (equivalent to ones above the involving the strong force)
+\item[(i)] EM charged particles $\rightarrow$ Ionisation, Bremsstrahlung, Cherenkov$^*$ radiation
+\item[(ii)] Hadrons $\rightarrow$ Nuclear interactions$^*$ (equivalent to ones above involving the strong force)
 \item[(iii)] Photons $\rightarrow$ Pair production$^{**}$, Photoelectric effect, Compton effect
 \end{itemize}
 $^{(*)}$ Cause a shower of particles (see later).\newline
@@ -18,7 +18,119 @@ Some examples of what these processes look like:
 \includegraphics[width=0.8\textwidth]{fig/strongforce/matterinteractions/interactions2.jpg}
 \end{center}
 
-A lot more information of this section can be found in Appendix~\ref{sec:interaction_particle_matter} that is not examinable but quite interesting!
+\subsection{Energy loss through ionisation}
+We can quantify the energy loss of a particle traversing through the detector, by looking at the average rate of energy lost per unit distance.
+
+
+For an incident particle of charge $ze$ with mass $M\gg m_e$, losing energy by ionising atomic electrons in a material with atomic number $Z$ we can use the Bethe-Bloch equation:
+
+\begin{equation}
+\label{eq:bethebloch}
+\frac{1}{\rho}<\frac{dE}{dx}>\approx -\frac{4\pi\hbar^2\alpha_{EM}^{2}}{m_ec^2\beta^2m_u}\frac{Z}{A}\left[\frac{1}{2}\log\frac{2\beta^2\gamma^2m_ec^2}{I^2}-\beta^2\right]
+\end{equation}
+where $\rho$ is the material density, and $I$ is the mean ionisation potential of the material averaged over all atomic electrons (ie $h<\nu_e>$), which is very roughly given by $\sim 10Z$~eV. Don't worry, you will never need to memorise this equation; instead, focus on understanding the various terms involved if you're given it.
+ 
+The Bethe-Bloch equation is valid in the region $0.1<\beta\gamma<10000$. Outside this range, there are additional corrections required beyond the scope of this course. Figure~\ref{fig:dedx} shows the rate of energy loss as a function of incoming particle momentum for various materials and various charged particles. 
+\begin{figure}
+\centering
+\includegraphics[width=0.6\textwidth]{fig/detector/dedx_distribution.png}\\
+\caption{Figure showing the \textit{average} rate of energy loss of a particle through ionisation of atomic electrons per unit distance traversed in material. The various curves denote different materials. Note that the y-axis units indicate the rate of energy lost is normalised by the density of the material.\label{fig:dedx}}
+\end{figure}
+
+\paragraph{Important points:}
+\begin{itemize}
+\item Energy loss proportional to $\sim\frac{1}{\beta^2}$ at low ($\beta\gamma<2$) speeds because slower particles feel the electric force of the atomic electron for a longer time
+\item Relativistic effects result in a slow rise at higher ($\beta\gamma>4$) speeds because high energy particles see increased transversal field strength due to Lorentz boost $E\to \gamma E$
+\item Minimum energy loss occurs (``minimum-ionising'') for $\sim (3-4)\beta\gamma$ and features largely independent of material
+\end{itemize}
+
+\exercise{
+Compute how many meters of iron are required on average to stop a muon with 10GeV/c of momentum. You are given the density of iron is $7.87\frac{g}{cm^3}$
+\vspace{1ex}\\
+\rotatebox{180}{\parbox{0.9\textwidth}{
+From Fig~\ref{fig:dedx} we can see that for a 10GeV/c muon the average energy lost per unit distance normalised by density for iron (Fe) is around $1.6MeVg^{-1}cm{^2}$. So we need $d=\frac{10\times 10^{3}\rm{MeV}/c} {7.87\frac{g}{cm^3}\times 1.6\rm{MeV}g^{-1}cm{^2}}=794cm=7.94m$ of iron
+}
+}}
+
+
+\subsection{Energy loss through radiation}
+Energy loss by radiation, also known as ``Bremsstrahlung'' or breaking radiation, occurs when a relativistic charged particle changes direction due to the influence of the field of the charged nuclei of the material. Now you should know that the change in direction, i.e., the acceleration of a charged particle, results in the production of EM waves. In this case, the energy emitted per unit length is given by
+\begin{equation}
+\frac{dE}{dx}\propto \frac{E}{m^2},
+\end{equation}
+where $m$ is the rest mass of the charged particle. This means that Bremsstrahlung energy losses are much more prominent for electrons than for pions or muons. We can write the energy lost per unit distance as
+\begin{equation}
+\frac{dE}{dx}=-\frac{E}{X_{0}},
+\end{equation}
+where $X_0$ depends on the material composition and the charge and mass of the incoming particle. We typically define $X_0$ for electrons. We therefore have that
+\begin{equation}
+E=E_0e^{-x/X_0},
+\end{equation}
+where $E_0$ is the initial energy of the electron.
+It is evident that $X_0$ denotes the mean distance over which a relativistic electron loses $E_0/e$ of its energy. The CMS detector uses lead tungstate crystals (PbWO$_4$) which have $X_0=0.89$~cm.
+
+The fact that electrons radiate a lot more energy as they are deflected (accelerated) compared to say protons, means that building circular accelerators instead of linear accelerators for electrons, has its positives and negatives. The benefit of a circular accelerator is that you can save space (and money) by being able to cycle the beam in a given ring, increasing its energy as the beam circulates many many times, without having to build a very long accelerator. However the downside is that given electrons radiate away a large amount of energy when bending in a circular orbit, you need to make sure you supply more energy each time which in turn also costs money.
+
+Considering both loses due to ionisation and Bremsstrahlung we have
+\begin{equation}
+\frac{dE}{dX}(\rm total)=\frac{dE}{dX}({\rm ionisation})+\frac{dE}{dX}({\rm bremsstrahlung})
+\end{equation}
+
+For typical electron energies produced in colliders $E_{e}\sim 1-100$~GeV (ie $\gg10$~MeV), therefore Bremsstrahlung emission dominates as shown in the figure below.
+\begin{center}
+\includegraphics[width=0.6\textwidth]{fig/detector/e_energy_brem_vs_ion.pdf}
+\end{center}
+
+\subsection{Photon interactions with matter}
+Energies of photons relevant at most particle physics experiments $\gg10$~MeV.
+At these energies pair production in the presence of the EM field of the charged nuclei dominate. At lower energies, Compton-scattering and the photo-electric effect dominate.
+\begin{center}
+\includegraphics[width=0.95\textwidth]{fig/detector/photon_interactions.pdf}
+\end{center}
+Pair production has an energy threshold of $E_{\gamma}\geq 2m_{e}\sim1$~MeV. Below this energy, photons will lose energy via Compton scattering.
+\begin{center}
+\includegraphics[width=0.90\textwidth]{fig/detector/photon_interactions_pdg.pdf}\\\tiny{Source:Particle Data Group}
+\end{center}
+
+\subsection{Electromagnetic showers}
+Incident electron or photons on thick material produce a cascade of EM processes through a chain of Bremsstrahlung and pair-production. A simplified picture is given below:
+\begin{center}
+\includegraphics[width=0.90\textwidth]{fig/detector/em_shower.pdf}
+\end{center}
+In this simplified model, an interaction occurs every $X_0$. Assume radiation length of Bremsstrahlung and of pair-production is the same (in reality $\sim25\%$ different). 
+Number of particles grows as $2^n$ where n is the integer number of radiation lengths. Energy per particle falls at each step as $E_02^{-n}$.
+When electron energy falls below a critical level energy loss via ionisation dominates. Photons on the other hand loose energy via compotn scattering until the absorbed via the photoelectric effect.
+
+Such detectors measure the energy of photons and electrons produced from the collision or from the decay of particles. These are called Electromagnetic Calorimeters (ECAL).
+
+\subsection{Hadronic showers}
+Hadrons, such as $\pi^{\pm}$, $p$, and $n$, can interact with nucleons in the nucleus via the strong force. So in a dense material, we can have:
+\[\pi^-+p\to n+\pi^0\]
+ie in incoming pion on the proton of a dense material will interact via the strong force and produce a $\pi^0$ and a $n$. The $n$ will cause a subsequent strong interaction, causing a hadronic shower in complete analogy to the EM shower. The $\pi^0$ will decay to a pair of photons which will initiate an EM shower. Therefore, the situation with hadronic interactions with dense material is more complicated, as you can get a combination of hadronic and EM showers.
+In contrast to EM showers, the mean distance for a hadronic shower is called the interaction length $\lambda$ and has typical sizes of $\mathcal{O}(10)$~cm compared to interaction lengths of $\mathcal{O}(1)$~cm. Detectors meant to measure energies of hadrons are called hadronic calorimeters (HCAL), and due to the larger showers, they tend to be larger than ECALs.
+
+\subsection{Cherenkov radiation*}
+A charged particle that moves in a medium with a velocity larger than the velocity of the speed of light in this medium (ie $v>c/n$ where $n$ is the refractive index of the medium), will emit a cone of light very much like the cone of sound of a sonic boom of an aircraft breaking the sound barrier (or like the ripples a duck produces as it swims in the pond)
+\begin{center}
+\includegraphics[width=0.45\textwidth]{fig/detector/cherenkov_angle.png}
+\includegraphics[width=0.45\textwidth]{fig/detector/duck_angle.png}
+\end{center}
+So photons are emitted at an angle $\theta_c$ given by 
+\begin{equation}
+\label{eq:cherenkov_angle}
+\cos\theta_{C}=\frac{1}{n\beta}
+\end{equation}
+By placing a gas or liquid volume in path of the particle and surround this volume by photon detectors, the resulting Cherenkov photons form a ring. We call these detectors Ring Imaging Cherenkov (RICH) detectors. 
+\begin{center}
+\includegraphics[width=0.75\textwidth]{fig/detector/rich_1_rings.png}
+\end{center}
+Measuring the Cherenkov angle allows to determine the speed of the particle. Combined with a measurement of the momentum of the particle, we can therefore determine very accurately the mass and hence the type of particle. An important point to remember and which also stems from Eq.~\ref{eq:cherenkov_angle}, is that Cherenkov radiation is only emitted if $\beta>\frac{1}{n}$. Additionally, as the particle's speed increases, $cos\theta_{C}$ approaches $\frac{c}{n}$ asymptotically. Thus the ability to determine the speed of the particle becomes more and more difficult as the ring size changes less and less. A solution is to have two RICH detectors with materials of different $n$, in order to have good resolution for a large range of particle speeds.
+\begin{center}
+\includegraphics[width=0.75\textwidth]{fig/detector/lhcb_cherenkov_vs_momentum.png}
+\end{center}
+
+
+%A lot more information of this section can be found in Appendix~\ref{sec:interaction_particle_matter} that is not examinable but quite interesting!
 
 
 \subsection{Putting together a particle physics detector}

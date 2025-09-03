@@ -60,6 +60,7 @@
 % more complex case: 4 authors, 3 institutions, 2 footnotes
 \author[a]{K.A. Petridis,}
 \author[a]{J. Rademacker}
+\author[a]{H. Flaecher}
 % The "\note" macro will give a warning: "Ignoring empty anchor..."
 % you can safely ignore it.
 
@@ -67,6 +68,7 @@
 
 % e-mail addresses: one for each author, in the same order as the authors
 \emailAdd{konstantinos.petridis@bristol.ac.uk}
+\emailAdd{henning.flaecher@bristol.ac.uk}
 
 
 
@@ -84,27 +86,38 @@
 \acknowledgments
 Many thanks to Joel Goldstein, Helen Heath and Jaap Velthuis
 for their notes and guidance.
-%% Week 7
 \newpage
+
+
+%% Week 1,2
 \include{introduction}
 \include{ParticlesAndDiagrams}
+% \include{Scattering theory}
 \include{fourvectors}
 \include{natural}
 \newpage
-%% Week 8
+
+%% Week 3
 \include{diracequation}
 \newpage
+
+%% Week 4
 \include{strongforce}
 \newpage
-%% Week 9
+
+%% Week 5
+\include{detectors}
+%\input{matter}
+\include{accelerators} 
+\newpage
+
+%% Week 7
 \include{weakSummary}
-
-\input{matter}
-
-
-\include{StrangnessMixingAndCharm}
 \include{C_P_CP_1}
 \include{C_P_CP_2}
+
+%\include{StrangnessMixingAndCharm}
+
 
 %% Week 6,7
 \include{C_P_CP_3}
@@ -112,8 +125,7 @@ for their notes and guidance.
 \include{C_P_CP_4}
 \include{RareDecays}
 %% Week 9
-\include{accelerators} 
-\include{detectors}
+
 %% Week 10
 \include{higgs}
 \include{bsm}
