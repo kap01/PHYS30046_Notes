@@ -286,6 +286,405 @@ A rather striking effect of \ps\ violation.
 
 \section{The $Z^0$ boson and parity}
 
+So far, we have discussed processes mediated by the weak force, like $\pi^+\to \mu^+\nu_\mu$, that proceed via the exchange of a $W^+$ boson where parity is violated. However, we know there is an additional mediator of the weak interaction, the $Z^0$ boson. The behaviour of processes involving a $Z^0$ boson under a parity transformation is a bit more involved and requires a better grounding of the role of the $Z^0$ boson. The discussion that follows gives you a somewhat qualitative description. For a more mathematically rigorous approach on weak interactions and electroweak unification that underpin the theoretical origin of the $W^\pm$ and $Z^0$ bosons, you should take the 4th year Quantum Field Theory course!
+
+\subsection{The need for an electrically neutral mediator of weak interactions and its consequences}
+
+Consider the process \[e^+e^-\to\mu^+\mu^-\]
+
+This can proceed via the EM interaction as shown below.
+
+\begin{center}
+\begin{tikzpicture}
+\centering
+  \begin{feynman}
+  \coordinate (l) at (-0.5,0);
+  \coordinate (r) at (2.9,0);
+ 
+  
+    % s-channel endpoints
+    \vertex (a);
+    \vertex [right=2.5cm of a] (b);
+
+    % incoming (left) — set yshift magnitude to control the angle
+    \vertex [left=1.2cm of a, yshift=11mm] (i1) {\(e^{-}\)};
+    \vertex [left=1.2cm of a, yshift=-11mm] (i2) {\(e^{+}\)};
+
+    % outgoing (right)
+    \vertex [right=1.2cm of b, yshift=11mm] (f1) {\(\mu^{-}\)};
+    \vertex [right=1.2cm of b, yshift=-11mm] (f2) {\(\mu^{+}\)};
+
+    \diagram*{
+      (i1) -- [fermion] (a) -- [photon, edge label=\(\gamma\)] (b) -- [fermion] (f1),
+      (i2) -- [anti fermion] (a),
+      (b) -- [anti fermion] (f2),
+    };
+    
+  \node [below right=0pt of l] {\(\sqrt{a_{EM}}\)};
+  \node [below left=0pt  of r] {\(\sqrt{a_{EM}}\)};
+  \end{feynman}
+\end{tikzpicture}
+\end{center}
+
+However, the same process can proceed via the exchange of two $W$ bosons as
+
+\begin{center}
+\begin{tikzpicture}
+\begin{feynman}
+  %--- Define vertices manually
+  \coordinate (bl) at (0,0);
+  \coordinate (tl) at (0,2.2);
+  \coordinate (br) at (3.2,0);
+  \coordinate (tr) at (3.2,2.2);
+
+  % external legs
+  \node at (-2,0)   (ein)  {\(e^{-}\)};
+  \node at (-2,2.2) (epin) {\(e^{+}\)};
+  \node at (5.2,0)  (mout) {\(\mu^{-}\)};
+  \node at (5.2,2.2)(mpout){\(\mu^{+}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl);
+  \draw[anti fermion]  (epin.east) -- (tl);
+  \draw[fermion]       (br) -- (mout.west);
+  \draw[anti fermion]  (tr) -- (mpout.west);
+
+  \draw[fermion]       (bl) -- node[left] {\(\nu_e\)}  (tl);
+  \draw[fermion]       (br) -- node[right]{\(\nu_\mu\)}(tr);
+
+  \draw[boson]         (bl) -- node[below]{\(W^{-}\)} (br);
+  \draw[boson]         (tl) -- node[above]{\(W^{+}\)} (tr);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl] {\(g_W\)};
+  \node [above=2pt of tl] {\(g_W\)};
+  \node [below=2pt of br]{\(g_W\)};
+  \node [above=2pt of tr]{\(g_W\)};
+\end{feynman}
+\end{tikzpicture}
+\end{center}
+
+There is a big problem with the above diagram. If one was to compute the cross-section of $e^+e^-\to \mu^+\mu^-$ following Feynman rules and cross-section calculations, one ends up with an infinite interaction rate! Clearly, this is nonsense as measurements show that the $e^+e^-\to \mu^+\mu^-$ rate is finite and in close agreement with the rate predicted by the diagram involving a photon-exchange, indicating the contributions from weak-interaction diagrams, such as the box diagram above, must be small and not infinite! The solution? The existence of an electrically neutral mediator of the weak interaction, the $Z^0$, such that we can draw diagrams of the form
+
+\begin{center}
+\begin{tikzpicture}
+\begin{feynman}
+  %--- Define vertices manually
+  \coordinate (bl) at (0,0);
+  \coordinate (tl) at (0,2.2);
+  \coordinate (br) at (2.2,0);
+  \coordinate (tr) at (2.2,2.2);
+
+  % external legs
+  \node at (-2,0)   (ein)  {\(e^{-}\)};
+  \node at (-2,2.2) (epin) {\(e^{+}\)};
+  \node at (4.2,0)  (mout) {\(\mu^{-}\)};
+  \node at (4.2,2.2)(mpout){\(\mu^{+}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl);
+  \draw[anti fermion]  (epin.east) -- (tl);
+  \draw[fermion]       (br) -- (mout.west);
+  \draw[anti fermion]  (tr) -- (mpout.west);
+
+  \draw[fermion]       (bl) -- node[left] {\(e^-\)}  (tl);
+  \draw[fermion]       (br) -- node[right]{\(\mu^-\)}(tr);
+
+  \draw[boson]         (bl) -- node[below]{\(Z^0\)} (br);
+  \draw[boson]         (tl) -- node[above]{\(\gamma\)} (tr);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl] {\(g_Z\)};
+  \node [above=2pt of tl] {\(\sqrt{\alpha_{EM}}\)};
+  \node [below=2pt of br]{\(g_Z\)};
+  \node [above=2pt of tr]{\(\sqrt{\alpha_{EM}}\)};
+
+   %--- Define vertices manually
+  \coordinate (bl2) at (7.2,0);
+  \coordinate (tl2) at (7.2,2.2);
+  \coordinate (br2) at (9.4,0);
+  \coordinate (tr2) at (9.4,2.2);
+
+  % external legs
+  \node at (5.2,0)   (ein)  {\(e^{-}\)};
+  \node at (5.2,2.2) (epin) {\(e^{+}\)};
+  \node at (11.2,0)  (mout) {\(\mu^{-}\)};
+  \node at (11.2,2.2)(mpout){\(\mu^{+}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl2);
+  \draw[anti fermion]  (epin.east) -- (tl2);
+  \draw[fermion]       (br2) -- (mout.west);
+  \draw[anti fermion]  (tr2) -- (mpout.west);
+
+  \draw[fermion]       (bl2) -- node[left] {\(e^-\)}  (tl2);
+  \draw[fermion]       (br2) -- node[right]{\(\mu^-\)}(tr2);
+
+  \draw[boson]         (bl2) -- node[below]{\(Z^{0}\)} (br2);
+  \draw[boson]         (tl2) -- node[above]{\(Z^{0}\)} (tr2);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl2] {\(g_Z\)};
+  \node [above=2pt of tl2] {\(g_Z\)};
+  \node [below=2pt of br2]{\(g_Z\)};
+  \node [above=2pt of tr2]{\(g_Z\)}; 
+\end{feynman}
+\end{tikzpicture}
+\end{center}
+
+By relating: the couplings $g_Z$, $g_W$ and $\sqrt{\alpha_{EM}}\,(e)$; the mass of the $W$ and $Z^0$ bosons; as well as the behaviour of processes mediated by the $Z^0$ boson under parity, the sum of the three diagrams shown below can be tamed to give a finite cross-section. 
+
+\begin{center}
+\begin{tikzpicture}
+\begin{feynman}
+  %--- Define vertices manually
+  \coordinate (bl) at (0,0);
+  \coordinate (tl) at (0,2.2);
+  \coordinate (br) at (2.2,0);
+  \coordinate (tr) at (2.2,2.2);
+
+  % external legs
+  \node at (-2,0)   (ein)  {\(e^{-}\)};
+  \node at (-2,2.2) (epin) {\(e^{+}\)};
+  \node at (4.2,0)  (mout) {\(\mu^{-}\)};
+  \node at (4.2,2.2)(mpout){\(\mu^{+}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl);
+  \draw[anti fermion]  (epin.east) -- (tl);
+  \draw[fermion]       (br) -- (mout.west);
+  \draw[anti fermion]  (tr) -- (mpout.west);
+
+  \draw[fermion]       (bl) -- node[left] {\(e^-\)}  (tl);
+  \draw[fermion]       (br) -- node[right]{\(\mu^-\)}(tr);
+
+  \draw[boson]         (bl) -- node[below]{\(Z^0\)} (br);
+  \draw[boson]         (tl) -- node[above]{\(\gamma\)} (tr);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl] {\(g_Z\)};
+  \node [above=2pt of tl] {\(\sqrt{\alpha_{EM}}\)};
+  \node [below=2pt of br]{\(g_Z\)};
+  \node [above=2pt of tr]{\(\sqrt{\alpha_{EM}}\)};
+
+   %--- Define vertices manually
+  \coordinate (bl2) at (7.2,0);
+  \coordinate (tl2) at (7.2,2.2);
+  \coordinate (br2) at (9.4,0);
+  \coordinate (tr2) at (9.4,2.2);
+
+  % external legs
+  \node at (5.2,0)   (ein)  {\(e^{-}\)};
+  \node at (5.2,2.2) (epin) {\(e^{+}\)};
+  \node at (11.2,0)  (mout) {\(\mu^{-}\)};
+  \node at (11.2,2.2)(mpout){\(\mu^{+}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl2);
+  \draw[anti fermion]  (epin.east) -- (tl2);
+  \draw[fermion]       (br2) -- (mout.west);
+  \draw[anti fermion]  (tr2) -- (mpout.west);
+
+  \draw[fermion]       (bl2) -- node[left] {\(e^-\)}  (tl2);
+  \draw[fermion]       (br2) -- node[right]{\(\mu^-\)}(tr2);
+
+  \draw[boson]         (bl2) -- node[below]{\(Z^{0}\)} (br2);
+  \draw[boson]         (tl2) -- node[above]{\(Z^{0}\)} (tr2);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl2] {\(g_Z\)};
+  \node [above=2pt of tl2] {\(g_Z\)};
+  \node [below=2pt of br2]{\(g_Z\)};
+  \node [above=2pt of tr2]{\(g_Z\)}; 
+\end{feynman}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{feynman}
+  %--- Define vertices manually
+  \coordinate (bl) at (0,0);
+  \coordinate (tl) at (0,2.2);
+  \coordinate (br) at (2.2,0);
+  \coordinate (tr) at (2.2,2.2);
+
+  % external legs
+  \node at (-2,0)   (ein)  {\(e^{-}\)};
+  \node at (-2,2.2) (epin) {\(e^{+}\)};
+  \node at (4.2,0)  (mout) {\(\mu^{-}\)};
+  \node at (4.2,2.2)(mpout){\(\mu^{+}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl);
+  \draw[anti fermion]  (epin.east) -- (tl);
+  \draw[fermion]       (br) -- (mout.west);
+  \draw[anti fermion]  (tr) -- (mpout.west);
+
+  \draw[fermion]       (bl) -- node[left] {\(\nu_e\)}  (tl);
+  \draw[fermion]       (br) -- node[right]{\(\nu_\mu\)}(tr);
+
+  \draw[boson]         (bl) -- node[below]{\(W^{-}\)} (br);
+  \draw[boson]         (tl) -- node[above]{\(W^{+}\)} (tr);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl] {\(g_W\)};
+  \node [above=2pt of tl] {\(g_W\)};
+  \node [below=2pt of br]{\(g_W\)};
+  \node [above=2pt of tr]{\(g_W\)};
+\end{feynman}
+\end{tikzpicture}
+\end{center}
+
+In fact, you will find out in next year's Quantum Field Theory course (highly recommended) that the unification of EM and Weak interactions gives rise naturally to the electrically neutral $Z^0$, EM charged $W$ bosons, and the relations between their couplings, masses, and behaviour under parity! In particular:
+\[
+m_W=\frac{\sqrt{2}}{g_{W}^{2}}{G_F}
+\]
+
+\[
+m_Z = \frac{m_W}{\sin\theta_W},
+\]
+where $\theta_W$ is called the Weinberg mixing angle. Its exact origin is beyond the scope of this year's course. You can read more about it in the recommended reading of this course or wait for next year's QFT course. All that matters is that $\theta_W$ is a fundamental parameter of the Standard Model of particle physics whose value is only known through measurements. A powerful test of the SM is measuring $m_W$, $m_Z$ and $\sin\theta_W$ independently and testing the validity of the above equations!
+
+The coupling strengths are related by
+
+\[
+\frac{e}{2\sqrt{2\epsilon_0}}=g_W\sin\theta_W=g_Z\cos\theta_W
+\]
+
+
+\[
+g_Z = \frac{m_W}{\sin\theta_W}
+\]
+
+Putting all of these relations together also allows us to write
+
+\[
+\frac{g_{Z}^{2}}{g_{W}^{2}}\frac{m_{W}^{2}}{m_{Z}^{2}}=\sin^{2}\theta_W
+\]
+
+Note that you don't need to memorise these relations as you will be given them in an exam. You simply need to understand that there is a relation between these quantities.
+
+Interestingly, we could have also motivated the existence of the $Z^0$ boson with the process: 
+
+\[q\bar{q}\to q'\bar{q}'\]
+
+In the same way, we would then introduce a $Z^0$ such that the following diagrams would give a finite contribution.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{feynman}
+  %--- Define vertices manually
+  \coordinate (bl) at (0,0);
+  \coordinate (tl) at (0,2.2);
+  \coordinate (br) at (2.2,0);
+  \coordinate (tr) at (2.2,2.2);
+
+  % external legs
+  \node at (-2,0)   (ein)  {\(q_{r,g,b}\)};
+  \node at (-2,2.2) (epin) {\(\bar{q}_{\overline{r,g,b}}\)};
+  \node at (4.2,0)  (mout) {\(q'_{r,g,b}\)};
+  \node at (4.2,2.2)(mpout){\(\bar{q}'_{\overline{r,g,b}}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl);
+  \draw[anti fermion]  (epin.east) -- (tl);
+  \draw[fermion]       (br) -- (mout.west);
+  \draw[anti fermion]  (tr) -- (mpout.west);
+
+  \draw[fermion]       (bl) -- node[left] {\(q_{r,g,b}\)}  (tl);
+  \draw[fermion]       (br) -- node[right]{\(q'_{r,g,b}\)}(tr);
+
+  \draw[boson]         (bl) -- node[below]{\(Z^0\)} (br);
+  \draw[boson]         (tl) -- node[above]{\(\gamma\)} (tr);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl] {\(g_{Z}^{q}\)};
+  \node [above=2pt of tl] {\(\sqrt{\alpha_{EM}^{q}}\)};
+  \node [below=2pt of br]{\(g_{Z}^{q'}\)};
+  \node [above=2pt of tr]{\(\sqrt{\alpha_{EM}^{q'}}\)};
+
+   %--- Define vertices manually
+  \coordinate (bl2) at (7.2,0);
+  \coordinate (tl2) at (7.2,2.2);
+  \coordinate (br2) at (9.4,0);
+  \coordinate (tr2) at (9.4,2.2);
+
+  % external legs
+  \node at (5.2,0)   (ein)  {\(q_{r,g,b}\)};
+  \node at (5.2,2.2) (epin) {\(\bar{q}_{r,g,b}\)};
+  \node at (11.2,0)  (mout) {\(q'_{r,g,b}\)};
+  \node at (11.2,2.2)(mpout){\(\bar{q'}_{\overline{r,g,b}}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl2);
+  \draw[anti fermion]  (epin.east) -- (tl2);
+  \draw[fermion]       (br2) -- (mout.west);
+  \draw[anti fermion]  (tr2) -- (mpout.west);
+
+  \draw[fermion]       (bl2) -- node[left] {\(q_{r,g,b}\)}  (tl2);
+  \draw[fermion]       (br2) -- node[right]{\(q'_{r,g,b}\)}(tr2);
+
+  \draw[boson]         (bl2) -- node[below]{\(Z^{0}\)} (br2);
+  \draw[boson]         (tl2) -- node[above]{\(Z^{0}\)} (tr2);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl2] {\(g_{Z}^{q}\)};
+  \node [above=2pt of tl2] {\(g_{Z}^{q}\)};
+  \node [below=2pt of br2]{\(g_{Z}^{q'}\)};
+  \node [above=2pt of tr2]{\(g_{Z}^{q'}\)}; 
+\end{feynman}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\begin{feynman}
+  %--- Define vertices manually
+  \coordinate (bl) at (0,0);
+  \coordinate (tl) at (0,2.2);
+  \coordinate (br) at (2.2,0);
+  \coordinate (tr) at (2.2,2.2);
+
+  % external legs
+  \node at (-2,0)   (ein)  {\(q_{r,g,b}\)};
+  \node at (-2,2.2) (epin) {\(\bar{q}_{\overline{r,g,b}}\)};
+  \node at (4.2,0)  (mout) {\(q'_{r,g,b}\)};
+  \node at (4.2,2.2)(mpout){\(\bar{q}'_{\overline{r,g,b}}\)};
+
+  % draw edges manually with TikZ-Feynman styles
+  \draw[fermion]       (ein.east) -- (bl);
+  \draw[anti fermion]  (epin.east) -- (tl);
+  \draw[fermion]       (br) -- (mout.west);
+  \draw[anti fermion]  (tr) -- (mpout.west);
+
+  \draw[fermion]       (bl) -- node[left] {\(q''_{r,g,b}\)}  (tl);
+  \draw[fermion]       (br) -- node[right]{\(q'''_{r,g,b}\)}(tr);
+
+  \draw[boson]         (bl) -- node[below]{\(W^{-}\)} (br);
+  \draw[boson]         (tl) -- node[above]{\(W^{+}\)} (tr);
+
+  % coupling labels at vertices
+  \node [below=2pt of bl] {\(g_{W}^{qq'}\)};
+  \node [above=2pt of tl] {\(g_{W}^{qq'}\)};
+  \node [below=2pt of br]{\(g_{W}^{q''q'''}\)};
+  \node [above=2pt of tr]{\(g_{W}^{q''q'''}\)};
+\end{feynman}
+\end{tikzpicture}
+\end{center}
+
+
+where I have introduced different couplings of the quarks to the $W$ and $Z^0$ boson (you will learn more about this in the following weeks).
+
+To obtain a finite contribution from the sum of the above diagrams, or similar higher-order diagrams involving all generations of leptons and quarks, there is an additional relation that needs to be fulfilled:
+
+\[
+\sum_{\ell}Q_{\ell}+3\sum_a Q_a=0
+\]
+
+where $Q_{\ell}$ is the electric charge of the six leptons and $Q_a$ the electric charge of the six quarks. The factor of 3 stems from summing over the three colour charges in the diagrams, such as those depicted above. This explains both why we have the same number of generations of quarks and leptons as well as why quarks have fractional electric charges!
+
+The mathematical proof of this is very involved. Next year, you will get closer to understanding it!
+
+\subsection{The parity of $Z^0$ interactions}
+
+
 
 \section{\cs{}harge Conjugation}
 \label{sec:ChargeConjugation}
